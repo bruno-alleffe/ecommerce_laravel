@@ -78,42 +78,18 @@
                 </thead>
         
                 <tbody>
+                  
+                  @foreach ($produtos as $produto)
                   <tr>
-                    <td><img src="img/mouse.jpg" class="circle "></td>
-                    <td>#123</td>
-                    <td>Mouse USB</td>                    
-                    <td>R$ 7.00</td>
-                    <td>Eletrônicos</td>
+                    <td><img src="{{ $produto->imagem }}" class="circle "></td>
+                    <td>#{{ $produto->id }}</td>
+                    <td>{{ $produto->nome }}</td>                    
+                    <td>R$ {{ number_format($produto->preco, 2, ',', '.') }}</td>
+                    <td>{{ $produto->categoria->nome }}</td>
                     <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
                       <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
                   </tr>
-                  <tr>
-                    <td><img src="img/mouse.jpg" class="circle"></td>
-                    <td>#123</td>
-                    <td>Mouse USB</td>                    
-                    <td>R$ 7.00</td>
-                    <td>Eletrônicos</td>
-                    <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-                      <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-                  </tr>
-                  <tr>
-                    <td><img src="img/mouse.jpg" class="circle"></td>
-                    <td>#123</td>
-                    <td>Mouse USB</td>                    
-                    <td>R$ 7.00</td>
-                    <td>Eletrônicos</td>
-                    <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-                      <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-                  </tr>
-                  <tr>
-                    <td><img src="img/mouse.jpg" class="circle"></td>
-                    <td>#123</td>
-                    <td>Mouse USB</td>                    
-                    <td>R$ 7.00</td>
-                    <td>Eletrônicos</td>
-                    <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-                      <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-                  </tr>
+                  @endforeach  
                 </tbody>
               </table>
             </div> 
