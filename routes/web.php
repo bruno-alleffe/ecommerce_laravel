@@ -40,4 +40,5 @@ Route::get('/register', [LoginController::class, 'create'])->name('login.create'
 
 route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard')->middleware(['auth', 'checkemail']);
 route::get('/admin/produtos', [ProdutoController::class, 'index'])->name('admin.produtos');
-route::delete('/admin/produto/delete/{id}', [ProdutoController::class, 'destroy'])->name('admin.delete');
+route::delete('/admin/produto/delete/{id}', [ProdutoController::class, 'destroy'])->name('admin.produto.delete');
+route::post('/admin/produto/store', [ProdutoController::class, 'store'])->name('admin.produto.store');
